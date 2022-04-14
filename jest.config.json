@@ -1,0 +1,40 @@
+{
+  "bail": true,
+  "collectCoverageFrom": [
+    "**/*.{ts,tsx}",
+    "!**/*.d.{ts,tsx}",
+    "!**/node_modules/**"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "branches": 100,
+      "functions": 100,
+      "lines": 100,
+      "statements": 100
+    }
+  },
+  "globals": {
+    "ts-jest": {
+      "tsconfig": {
+        "target": "es6"
+      }
+    }
+  },
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js",
+    "mjs",
+    "cjs",
+    "jsx",
+    "json",
+    "node"
+  ],
+  "moduleDirectories": ["node_modules"],
+  "preset": "ts-jest",
+  "testEnvironment": "jsdom",
+  "testMatch": ["**/*.test.{ts,tsx}"],
+  "testURL": "http://localhost",
+  "transformIgnorePatterns": ["/node_modules/.+\\.js$"],
+  "verbose": true
+}

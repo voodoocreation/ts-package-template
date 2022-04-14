@@ -1,0 +1,31 @@
+#Logs
+logs
+*.log
+
+#project
+coverage
+dist
+*.js
+*.d.ts
+*.tgz
+
+#node
+node_modules
+npm-debug.log
+yarn.error.l
+package-lock.json
+
+#IDEs
+.idea
+*.sublime-*
+.tern-project
+
+#Mac OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+#git hooks
+pre-commit.sh

@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom", "esnext"],
+    "declaration": true,
+    "rootDir": "./",
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "downlevelIteration": true,
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "exclude": [
+    "**/coverage/*",
+    "**/node_modules/*",
+    "**/*.d.ts",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ]
+}
