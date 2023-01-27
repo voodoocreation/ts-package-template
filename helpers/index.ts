@@ -1,1 +1,1 @@
-export * from "./greeting.helpers";
+export * from "./greeting.helpers.js";

@@ -1,9 +1,8 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
 
 import { createInterface } from "readline";
 
-import { greet } from "./index";
+import { greet } from "./index.js";
 
 const rl = createInterface({
   input: process.stdin,

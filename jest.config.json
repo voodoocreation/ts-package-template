@@ -3,7 +3,9 @@
   "collectCoverageFrom": [
     "**/*.{ts,tsx}",
     "!**/*.d.{ts,tsx}",
-    "!**/node_modules/**"
+    "!**/node_modules/**",
+    "!**/cjs/**",
+    "!**/esm/**"
   ],
   "coverageThreshold": {
     "global": {
@@ -18,23 +20,16 @@
       "ts-jest",
       {
         "tsconfig": {
-          "sourceMap": true,
-          "target": "es6"
-        }
+          "sourceMap": true
+        },
+        "useESM": true
       }
     ]
   },
-  "moduleFileExtensions": [
-    "ts",
-    "tsx",
-    "js",
-    "mjs",
-    "cjs",
-    "jsx",
-    "json",
-    "node"
-  ],
   "moduleDirectories": ["node_modules"],
+  "moduleNameMapper": {
+    "^(\\.{1,2}/.*)\\.js$": "$1"
+  },
   "testEnvironment": "jsdom",
   "testMatch": ["**/*.test.{ts,tsx}"],
   "testEnvironmentOptions": {

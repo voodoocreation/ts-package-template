@@ -1,4 +1,4 @@
-import { greet } from "./greeting.helpers";
+import { greet } from "./greeting.helpers.js";
 
 describe("[helpers] Greeting", () => {
   describe("greet", () => {

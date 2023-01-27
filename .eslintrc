@@ -2,6 +2,8 @@
   "extends": ["voodoocreation/base"],
   "ignorePatterns": "**/*.d.ts",
   "parserOptions": {
-    "project": "tsconfig.lint.json"
+    "ecmaVersion": 2020,
+    "project": "tsconfig.lint.json",
+    "sourceType": "module"
   }
 }

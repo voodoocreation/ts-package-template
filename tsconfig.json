@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "lib": ["dom", "esnext"],
+    "target": "ES2015",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["DOM", "ESNext"],
     "declaration": true,
     "rootDir": "./",
     "skipLibCheck": true,
@@ -12,13 +13,14 @@
     "sourceMap": false,
     "noImplicitAny": true,
     "downlevelIteration": true,
-    "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
   "exclude": [
     "**/coverage/*",
     "**/node_modules/*",
+    "**/cjs/*",
+    "**/esm/*",
     "**/*.d.ts",
     "**/*.test.ts",
     "**/*.test.tsx"

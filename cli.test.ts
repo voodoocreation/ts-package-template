@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
-import readline from "readline";
+import { jest } from "@jest/globals";
 
-import { greet } from "./helpers";
+import { greet } from "./helpers/index.js";
 
-const rl: readline.ReadLine = new Proxy<any>(
+const rl = new Proxy<any>(
   {},
   {
     get: (obj, prop) => {
@@ -13,12 +13,17 @@ const rl: readline.ReadLine = new Proxy<any>(
   }
 );
 
-jest.spyOn(readline, "createInterface").mockImplementation(() => rl);
+jest.mock("readline", () => ({
+  createInterface: () => rl,
+}));
+
 jest.spyOn(console, "log").mockImplementationOnce(() => {});
 
-import("./cli");
-
 describe("CLI", () => {
+  beforeAll(() => {
+    import("./cli.js");
+  });
+
   it("prompts the user for their name", () => {
     expect(rl.question).toHaveBeenCalledTimes(1);
     expect(rl.question).toHaveBeenCalledWith(
@@ -28,7 +33,7 @@ describe("CLI", () => {
   });
 
   it("gives an answer", () => {
-    const [, answer] = (rl.question as jest.Mock).mock.calls[0];
+    const [, answer] = rl.question.mock.calls[0];
     answer("Test");
   });
 
