@@ -15,6 +15,25 @@ This is just to show an example of how to define things - you can delete it and 
 own package and/or CLI implementation.
 
 
+## Developing your project
+Because this template has been configured to support ESM, you will have to ensure your import paths
+include the exact path to the file. This unfortunately means that it won't correctly resolve without
+the extension or for index files just using the folder in the import path.
+
+Also, for `.ts` and `.tsx` files, you will have to ensure you use `.js` and `.jsx` extensions in your
+import paths.
+
+Here's an example:
+```typescript
+// These will not work
+import { thing } from "../helpers";
+import { thing } from "../helpers/thing";
+
+// These will work
+import { thing } from "../helpers/index.js";
+import { thing } from "../helpers/thing.js";
+```
+
 ## Testing the CLI command locally
 If you want to test the CLI command locally you can either run `node esm/cli` or `node cjs/cli` in
 the project root after compiling, or to test it as a global command you can run `npm link` after
