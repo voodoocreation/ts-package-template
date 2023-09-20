@@ -10,7 +10,7 @@ const rl = new Proxy<any>(
       obj[prop] = obj[prop] || jest.fn();
       return obj[prop];
     },
-  }
+  },
 );
 
 jest.mock("readline", () => ({
@@ -28,7 +28,7 @@ describe("CLI", () => {
     expect(rl.question).toHaveBeenCalledTimes(1);
     expect(rl.question).toHaveBeenCalledWith(
       "What is your name?\n",
-      expect.anything()
+      expect.anything(),
     );
   });
 
