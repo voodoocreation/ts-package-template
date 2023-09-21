@@ -28,9 +28,8 @@
     "require": "./cjs/index.js"
   },
   "files": [
-    "**/index.js",
-    "**/package.json",
-    "**/*.d.ts"
+    "cjs/**/*",
+    "esm/**/*"
   ],
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
