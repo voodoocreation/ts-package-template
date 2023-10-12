@@ -35,12 +35,12 @@ import { thing } from "../helpers/thing.js";
 ```
 
 ## Testing the CLI command locally
-If you want to test the CLI command locally you can either run `node esm/cli` or `node cjs/cli` in
-the project root after compiling, or to test it as a global command you can run `npm link` after
-installing the project, which will allow you to run [the package's exported CLI commands](./package.json#L22-L24) globally.
+If you want to test the CLI command locally you can run `yarn start` in the project root after
+compiling, or to test it as a global command you can run `npm link` after installing the project,
+which will allow you to run [the package's exported CLI commands](./package.json#37) globally.
 
 
-## Testing the package locally
+## Testing the package contents locally
 You should add unit test coverage for your package implementation to ensure everything works correctly.
 If you want to test it interactively in a consuming project to be 100% certain your package works as
 expected, you can use the link functionality provided by [Yarn](https://classic.yarnpkg.com/en/docs/cli/link)

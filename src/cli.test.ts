@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { jest } from "@jest/globals";
 
-import { greet } from "./helpers/index.js";
+import { greet } from "./helpers";
 
 const rl = new Proxy<any>(
   {},
@@ -21,7 +21,7 @@ jest.spyOn(console, "log").mockImplementationOnce(() => {});
 
 describe("CLI", () => {
   beforeAll(() => {
-    import("./cli.js");
+    import("./cli");
   });
 
   it("prompts the user for their name", () => {

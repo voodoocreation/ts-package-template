@@ -7,6 +7,7 @@
   "repository": "https://github.com/voodoocreation/ts-package-template",
   "license": "MIT",
   "scripts": {
+    "start": "ts-node --esm ./src/cli.ts",
     "clean": "rimraf --glob ./{cjs,esm}/!(package.json)",
     "compile": "yarn clean && yarn compile:esm && yarn compile:cjs",
     "compile:watch": "yarn clean && concurrently --kill-others \"yarn compile:esm --watch\" \"yarn compile:cjs --watch\"",
@@ -33,9 +34,7 @@
   ],
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
-  "bin": {
-    "greeting": "./esm/cli.js"
-  },
+  "bin": "./esm/cli.js",
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@types/jest": "^29.5.5",
