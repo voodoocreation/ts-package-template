@@ -1,7 +1,6 @@
-/* eslint-disable no-console */
 import { jest } from "@jest/globals";
 
-import { greet } from "./helpers";
+import { greet } from "./helpers/index.js";
 
 const rl = new Proxy<any>(
   {},
@@ -13,15 +12,15 @@ const rl = new Proxy<any>(
   },
 );
 
-jest.mock("readline", () => ({
+jest.unstable_mockModule("readline", () => ({
   createInterface: () => rl,
 }));
 
 jest.spyOn(console, "log").mockImplementationOnce(() => {});
 
 describe("CLI", () => {
-  beforeAll(() => {
-    import("./cli");
+  beforeAll(async () => {
+    await import("./cli.js");
   });
 
   it("prompts the user for their name", () => {
