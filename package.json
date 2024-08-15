@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node --esm ./src/cli.ts",
-    "clean": "rimraf --glob ./{cjs,esm}/!(package.json)",
+    "clean": "rimraf --glob \"./{cjs,esm}/!(package.json)\"",
     "compile": "yarn clean && yarn compile:esm && yarn compile:cjs",
     "compile:watch": "yarn clean && concurrently --kill-others \"yarn compile:esm --watch\" \"yarn compile:cjs --watch\"",
     "compile:esm": "yarn tsc --project tsconfig.esm.json",
