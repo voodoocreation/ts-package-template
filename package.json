@@ -26,7 +26,8 @@
   "type": "module",
   "exports": {
     "import": "./esm/index.js",
-    "require": "./cjs/index.js"
+    "require": "./cjs/index.js",
+    "types": "./esm/index.js"
   },
   "files": [
     "cjs/**/*",
